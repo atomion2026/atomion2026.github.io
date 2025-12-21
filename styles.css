@@ -132,6 +132,7 @@ section {
 #inscriptions form {
     max-width: 600px;
     margin: 0 auto;
+    margin-bottom: 65px;
     background-color: #222;
     padding: 20px;
     border-radius: 8px;
@@ -146,7 +147,7 @@ section {
 
 #inscriptions input[type="text"],
 #inscriptions input[type="email"] {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #444;
@@ -177,8 +178,8 @@ section {
     background-color: #222; /* Fondo oscuro para resaltar la introducción */
     color: #fff; /* Color del texto */
     text-align: center;
-    margin: 0 auto; /* Centra el contenido */
-    max-width: 800px; /* Ancho máximo para mantener el contenido bien estructurado */
+    margin: 20px auto; /* Centra el contenido */
+    max-width: min(80%,800px); /* Ancho máximo para mantener el contenido bien estructurado */
     border-radius: 8px; /* Bordes redondeados opcionales */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Añade una sombra para destacar el contenido */
 }
