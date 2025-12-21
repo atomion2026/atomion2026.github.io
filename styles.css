@@ -156,7 +156,7 @@ section {
     color: #fff;
 }
 
-#inscriptions input[type="submit"] {
+#inscriptions button[type="submit"] {
     background-color: #004080; /* Dark blue */
     color: #fff;
     padding: 10px 20px;
@@ -167,7 +167,7 @@ section {
     transition: background-color 0.3s;
 }
 
-#inscriptions input[type="submit"]:hover {
+#inscriptions button[type="submit"]:hover {
     background-color: #003366; /* Slightly darker blue */
 }
 
