@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atomio2026</title>
+    <title>Atomion2026</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,15 +17,15 @@
             <li><a href="#schedule">Schedule</a></li>
             <li><a href="#participants">Participants</a></li>
             <li><a href="#organizers">Organizers</a></li>
-            <li><a href="#inscriptions">Inscriptions</a></li>
-            #funding adn support
+            <li><a href="#inscriptions">Registration</a></li>
+            <li><a href="#inscriptions">Funding and Support</a></li>
         </ul>
     </nav>
 
     <!-- Descripción inicial -->
     <div class="intro">
-        <p>The Atomion workshop brings togheter experts from around the world to discuss new advances in different aspects
-        of AMO and chemical-physics sciences. The discussed topics include: trapped ions, ultracold chemistry, molecular spectroscopy. </p>
+        <p>The Atomion workshop brings together experts from around the world to discuss new advances in different aspects
+        of AMO and chemical physics. The discussed topics include: trapped ions, ultracold chemistry, molecular spectroscopy. </p>
     </div>
 
     <section id="location">
@@ -36,7 +36,7 @@
 
     <section id="schedule">
         <h2>Schedule</h2>
-        <p>Date: To be defined</p>
+        <p>Date: To be announced.</p>
         <p>The detailed schedule will be updated soon.</p>
     </section>
 
@@ -56,41 +56,31 @@
         <div class="organizers-container">
             <div class="organizer">
                 <img src="perezriosj.jpg" alt="Organizer 1">
-                <p>Jesús Pérez Ríos</p>
-                <a href="https://example.com" class="affiliation">Affiliation 1</a>
+                <p>Jesús Pérez-Ríos</p>
+                <a href="https://www.stonybrook.edu/commcms/physics/" class="affiliation">Stony Brook University</a>
             </div>
             <div class="organizer">
                 <img src="wang.jpeg" alt="Organizer 2">
                 <p>Yu Wang</p>
-                <a href="https://example.com" class="affiliation">Affiliation 2</a>
-            </div>
-            <div class="organizer">
-                <img src="perezriosj.jpg" alt="Organizer 1">
-                <p>Jesús Pérez Ríos</p>
-                <a href="https://example.com" class="affiliation">Affiliation 1</a>
-            </div>
-            <div class="organizer">
-                <img src="wang.jpeg" alt="Organizer 2">
-                <p>Yu Wang</p>
-                <a href="https://example.com" class="affiliation">Affiliation 2</a>
+                <a href="https://www.phys.tsinghua.edu.cn/phyen/" class="affiliation">Tsinghua University</a>
             </div>
         </div>
     </section>
 
     <!-- Sección de Inscripciones -->
     <section id="inscriptions">
-        <h2>Inscriptions</h2>
-        <form action="submit_form.php" method="post">
+        <h2>Registration</h2>
+        <form action="https://script.google.com/macros/s/AKfycbz0I5LTx2NMe7vq8HBWSPyW3maXOyAwH-3F9f8xCzfnoUqEtB_yCQvbQyHsK-iCgz0w/exec" method="POST">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Name" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
 
             <label for="organization">Organization:</label>
-            <input type="text" id="organization" name="organization">
+            <input type="text" id="organization" name="organization" placeholder="Organization" required>
 
-            <input type="submit" value="Register">
+            <button type="submit" value="Register">Register</button>
         </form>
     </section>
 
