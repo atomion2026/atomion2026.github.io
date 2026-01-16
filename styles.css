@@ -6,8 +6,12 @@ body {
   padding: 0;
 }
 
+/* OLD HEADER STYLE (remove or comment out)
+
+
+
 header {
-  background-color: #004080; /* Dark blue */
+  background-color: #004080; /* Dark blue
   padding: 20px;
   text-align: center;
 }
@@ -18,6 +22,29 @@ header h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+ */
+
+ .hero-header {
+     background-image: url("ATOMION_2026 LOGO.png"); /* <-- use your image name */
+     background-size: cover;
+     background-position: center;
+     height: 250px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: white;
+     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+ }
+
+ .hero-header h1 {
+     font-size: 2.5rem;
+     font-weight: bold;
+     background-color: rgba(0, 0, 0, 0.4);
+     padding: 10px 20px;
+     border-radius: 10px;
+     text-transform: uppercase;
+ }
+
 
 nav {
   background-color: #333;
@@ -73,6 +100,16 @@ footer p {
 ul {
   list-style-type: square;
   padding-left: 20px;
+}
+
+#location a {
+  color: #b30000; /* red like SBU’s colors */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#location a:hover {
+  text-decoration: underline;
 }
 
 .location-img {
