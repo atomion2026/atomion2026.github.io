@@ -25,7 +25,7 @@ header h1 {
  */
 
  .hero-header {
-     background-image: url("ATOMION_2026 LOGO.png"); /* <-- use your image name */
+     background-image: url("ATOMION_2026LOGO.png"); /* <-- use your image name */
      background-size: cover;
      background-position: center;
      height: 250px;
