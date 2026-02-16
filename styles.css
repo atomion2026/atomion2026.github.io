@@ -122,6 +122,14 @@ ul {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Añade una sombra a la imagen */
 }
 
+.center {
+   width: 300;
+   height: 300;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
 /* Estilos para la sección de Organizadores */
 .organizers-container {
     display: flex;
@@ -158,6 +166,123 @@ ul {
 .affiliation:hover {
     text-decoration: underline; /* Subraya el enlace al pasar el ratón */
 }
+
+
+/* ================= SCHEDULE SECTION ================= */
+
+#schedule {
+    margin-bottom: 80px;
+}
+
+.day-block {
+    margin-bottom: 40px;
+}
+
+.day-block h3 {
+    color: #00ccff;
+    margin-bottom: 15px;
+    border-left: 4px solid #004080;
+    padding-left: 10px;
+}
+
+.schedule-table {
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.schedule-table .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.2s ease;
+}
+
+.schedule-table .row:last-child {
+    border-bottom: none;
+}
+
+.schedule-table .row:hover {
+    background-color: #2a2a2a;
+}
+
+.schedule-table .time {
+    font-weight: bold;
+    color: #00ccff;
+    min-width: 120px;
+}
+
+/* Break styling */
+.schedule-table .break {
+    background-color: #1a1a1a;
+    font-style: italic;
+    color: #aaa;
+}
+
+/* Session styling */
+.schedule-table .session {
+    border-left: 3px solid #004080;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .schedule-table .row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+/* Collapsible day styling */
+
+.day-block {
+    margin-bottom: 30px;
+    background-color: #111;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.day-block summary {
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #00ccff;
+    background-color: #1a1a1a;
+    list-style: none;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+
+.day-block summary:hover {
+    background-color: #222;
+}
+
+/* Remove default arrow */
+.day-block summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Custom arrow */
+.day-block summary::after {
+    content: " ▼";
+    float: right;
+    transition: transform 0.2s ease;
+}
+
+.day-block[open] summary::after {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
 
 /* Otros estilos */
 
