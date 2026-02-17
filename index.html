@@ -191,7 +191,7 @@
         <h2>Registration</h2>
         <p>Interested participants are invited to submit an abstract for either the Poster Session or a Hot Topic Talk. The deadline for registration and abstract submission is <b>April 20th.</b>.</p>
         <p>The registration fee for the event is <b>$200</b>. A payment link will be provided in due course. Please note that all participants must register using the form below, as the number of available spots is limited.</p>
-        <form action="https://script.google.com/macros/s/AKfycbz0I5LTx2NMe7vq8HBWSPyW3maXOyAwH-3F9f8xCzfnoUqEtB_yCQvbQyHsK-iCgz0w/exec" method="post">
+        <form id="regForm" action="https://script.google.com/macros/s/AKfycbwKqsS7izbjVmalSi7IEAkJVxZcbulD5LppS1iWfF5Kk767-wGNHpVdqEC43ML8JXNM/exec" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -202,12 +202,61 @@
             <input type="text" id="organization" name="organization">
 
             <label for="abstract">Abstract:</label>
-            <textarea cols="30" rows="10" id="abstract" name="abstract"></textarea>
+            <textarea cols="30" rows="10" id="abstract" name="abstract" placeholder="To upload a PDF abstract, please also use the 'Upload PDF abstract' button below."></textarea>
 
             <p>
             <button type="submit" value="Register" id="submit">Submit</button>
             </p>
         </form>
+
+        <form id="fileUploadForm">
+            <input type="file" id="pdfFile" accept="application/pdf" required>
+            <button type="submit">Upload PDF abstract</button>
+        </form>
+        <div id="status"></div>
+
+        <script>
+            document.getElementById('fileUploadForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const fileInput = document.getElementById('pdfFile');
+                const file = fileInput.files[0];
+                const statusDiv = document.getElementById('status');
+
+                if (file && file.type === "application/pdf") {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const base64Data = event.target.result.split(',')[1];
+                        uploadFile(base64Data, file.type, file.name, statusDiv);
+                    };
+                    reader.readAsDataURL(file);
+                    statusDiv.innerHTML = 'Uploading...';
+                } else {
+                    statusDiv.innerHTML = 'Please select a valid PDF file.';
+                }
+            });
+
+            function uploadFile(data, mimeType, filename, statusDiv) {
+                // REPLACE WITH YOUR DEPLOYED WEB APP URL
+                const webAppUrl = 'https://script.google.com/macros/s/AKfycbxJVWMARAuRom86Lbu2FwedOfxXJ79ChPDDxIBOXEmaWv9gXPK0Ohn5Wwd1TnBURyq3/exec';
+
+                fetch(webAppUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // Needed for some deployment configurations
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `data=${encodeURIComponent(data)}&mimetype=${encodeURIComponent(mimeType)}&filename=${encodeURIComponent(filename)}`
+                })
+                .then(response => {
+                    statusDiv.innerHTML = 'File uploaded successfully!';
+                    document.getElementById('fileUploadForm').reset();
+                })
+                .catch(error => {
+                    statusDiv.innerHTML = 'Error uploading file: ' + error;
+                });
+            }
+        </script>
+
     </section>
 
     <!-- Sección de Organizadores -->
@@ -238,7 +287,7 @@
     <section id="Sponsors">
       <h2>Sponsors</h2>
       <p>
-        Organizers aknowledge to the <a href="https://www.stonybrook.edu/commcms/physics/" target="_blank" >Physics and Astronomy department </a> and
+        Organizers acknowledge to the <a href="https://www.stonybrook.edu/commcms/physics/" target="_blank" >Physics and Astronomy department </a> and
         <a href="https://www.stonybrook.edu/provost/" target="_blank">Provost</a> of Stony Brook University for their considered financial support to this event.
       </p>
         <img src="SBU.png" alt="SBU"  width="300" class=center>
