@@ -221,6 +221,13 @@ ul {
     color: #aaa;
 }
 
+/* Highlighted session header styling */
+.schedule-table .highlight {
+    background-color: #111;   /* slightly darker than break */
+    font-weight: bold;
+    color: #00ccff;           /* your sky blue accent */
+}
+
 /* Session styling */
 .schedule-table .session {
     border-left: 3px solid #004080;
