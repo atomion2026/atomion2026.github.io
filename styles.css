@@ -401,3 +401,11 @@ section {
     margin: 0;
     font-size: 1.2em; /* Ajusta el tamaño del texto */
 }
+
+/*double logo sponsors*/
+.sponsor-logos {
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* align vertically */
+    gap: 40px;                 /* space between logos */
+}
