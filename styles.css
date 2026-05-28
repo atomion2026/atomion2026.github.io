@@ -1,9 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #000;
   color: #fff;
   margin: 0;
   padding: 0;
+  line-height: 1.5;
 }
 
 /* OLD HEADER STYLE (remove or comment out)
@@ -48,8 +53,12 @@ header h1 {
 
 nav {
   background-color: #333;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -75,7 +84,10 @@ nav ul li a:hover {
 }
 
 section {
-  padding: 20px;
+  padding: 40px clamp(20px, 5vw, 60px);
+  max-width: 1100px;
+  margin: 0 auto;
+  scroll-margin-top: 70px;
 }
 
 section h2 {
@@ -87,10 +99,8 @@ section h2 {
 footer {
   background-color: #004080;
   text-align: center;
-  padding: 10px;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  padding: 20px;
+  margin-top: 40px;
 }
 
 footer p {
@@ -215,7 +225,7 @@ ul {
 /* ================= SCHEDULE SECTION ================= */
 
 #schedule {
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 .day-block {
@@ -335,17 +345,10 @@ ul {
 
 
 
-/* Otros estilos */
-
-section {
-  padding: 20px;
-}
-
 /* Estilos para la sección de Inscripciones */
 #inscriptions form {
     max-width: 600px;
     margin: 0 auto;
-    margin-bottom: 65px;
     background-color: #222;
     padding: 20px;
     border-radius: 8px;
